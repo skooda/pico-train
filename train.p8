@@ -1,6 +1,24 @@
 pico-8 cartridge // http://www.pico-8.com
 version 42
 __lua__
+//███ ██   ██  █ █   █
+//  █   █ █ █  █ █ ██ █
+//  █   ██  ███ █ █ ██
+//  █   █ █ █  █ █ █   █
+//
+// demake of "vlak" dos game
+// 
+// original game was created by
+// miroslav nemecek from roznov
+// pod radhostem and it was a 
+// crucial part of my childhood
+//
+// original was the most popular
+// czech game in 90's so i would
+// like to pay tribute to author
+// preparing this demake. 
+ 
+-->8
 -- ➡️ main
 function _init()
   tick=0
@@ -67,6 +85,12 @@ end
 
 -->8
 -- ★ tools n graphics
+
+// print modal
+function modal(txt)
+  cntr = 64-(#txt * 2)
+  print(txt,cntr,121,10)
+end
 
 // put thing on location
 function put(x,y,sprite,rot,frc)
@@ -214,6 +238,7 @@ function update_train()
 end
 
 -->8
+-- tools
 -- map
 
 // get pos of level on a map
@@ -284,12 +309,6 @@ end
 function map_set(x,y,s)
  lx,ly = get_lvl_pos(lvl)
  return mset(x+lx,y+ly,s)
-end
--->8
--- tools
-function modal(txt)
-  cntr = 64-(#txt * 2)
-  print(txt,cntr,121,10)
 end
 -->8
 -- input
@@ -372,7 +391,7 @@ end
 // - door open sound?
 // - increasing train speed
 // - subtitles
-// -  
+// - cartridge image
 __gfx__
 00000000888885000000000000000090000000000000000000000000000000000000000000000000000000008888888200aaa90000900900000d0000009000a0
 00000000dddd0000000000000090000000000000000000000000000000000000000000000000000000000000888888820a4494900a90099000dc70000a940aa4
