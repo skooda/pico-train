@@ -6,6 +6,7 @@ function _init()
   tick=0
   intro=true
   speed=1
+  score=0
   init_level(31)
   palt(0, false)
 end
@@ -28,26 +29,30 @@ function _draw()
   draw_train()
   if gameover then
     modal("press ❎ to retry")
-  end
-  if intro then
+  elseif intro then
     intro_draw()
     modal("press ❎ to start")
+  else 
+    modal("score: "..tostr(score))
   end
 end
 
 function intro_draw()
+  moves=flr(tick/10)
   for i=1,min(moves,14) do
     put(i,10,47+i)
   end
 end
 
 function init_level(l)
+  lvlscore = score
   lvl=l or 0
   init_train(-1,-1)
   reload(0x1000, 0x1000, 0x2000)
 end
 
 function reset_level()
+  score = lvlscore
   init_level(lvl)
 end
 
@@ -186,6 +191,7 @@ function swallow(x,y)
   if floor != 0 then
     add(carriage,floor)
     map_set(train.x,train.y,0)
+    score += 10
   end
 end
 
