@@ -329,8 +329,9 @@ function handle_input()
   if btnp(❎) then
     if gameover then
       reset_level()
-    else
-      next_level()
+    //// debug :) ////
+    //else
+    //  next_level()
     end
   end
   
@@ -355,6 +356,23 @@ function get_dir()
 end
 
 
+-->8
+-- todo
+
+// original game:
+// - winner (end game) function
+// - level switch effect?
+// - passwords/load game?
+// - level end sound effect
+// - differend swallow snd
+// 
+// bonus:
+// - thanks to original author
+// - music?
+// - door open sound?
+// - increasing train speed
+// - subtitles
+// -  
 __gfx__
 00000000888885000000000000000090000000000000000000000000000000000000000000000000000000008888888200aaa90000900900000d0000009000a0
 00000000dddd0000000000000090000000000000000000000000000000000000000000000000000000000000888888820a4494900a90099000dc70000a940aa4
